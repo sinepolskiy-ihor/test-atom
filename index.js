@@ -6,9 +6,24 @@ menuSearchInput.addEventListener(`keyup`, () =>
     menuElems.forEach(elem =>
     {
         elem.parentNode.classList.remove(`d-none`)
-        if(elem.innerText && menuSearchInput.value && !elem.innerText.toLowerCase().includes(menuSearchInput.value.toLowerCase()))
+        if(elem.innerText)
         {
-            elem.parentNode.classList.add(`d-none`)
+            const found = elem.innerText.toLowerCase().includes(menuSearchInput.value.toLowerCase())
+            const closestDropDown = elem.closest(`.nav-item.dropdown`)
+            if(menuSearchInput.value && !found)
+            {
+                elem.parentNode.classList.add(`d-none`)
+            }
+            if(menuSearchInput.value && found && closestDropDown)
+            {
+                closestDropDown.classList.remove(`d-none`)
+                const children = closestDropDown.children
+                for(let i = 0; i < children.length; i++)
+                {
+                    const elem = children[i]
+                    elem.classList.add(`show`)
+                }
+            }
         }
     })
 })
