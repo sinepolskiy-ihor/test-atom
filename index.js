@@ -1,7 +1,7 @@
 const menuSearchInput = document.getElementById(`menuSearch`)
 const menuElems = document.querySelectorAll(`.navbar-nav.justify-content-end.flex-grow-1.pe-3 li a`)
 
-menuSearchInput.addEventListener(`keyup`, () =>
+menuSearchInput.addEventListener(`input`, () =>
 {
     menuElems.forEach(elem =>
     {
