@@ -14,6 +14,10 @@ menuSearchInput.addEventListener(`input`, () =>
             {
                 elem.parentNode.classList.add(`d-none`)
             }
+            if(menuSearchInput.value && found && elem.parentNode.classList.contains(`nav-item`) && elem.parentNode.classList.contains(`dropdown`))
+            {
+                elem.parentNode.querySelectorAll(`ul > li`).forEach(elemChild => elemChild.classList.remove(`d-none`))   
+            }
             if(menuSearchInput.value && found && closestDropDown)
             {
                 closestDropDown.classList.remove(`d-none`)
