@@ -7,6 +7,7 @@
     <link rel="icon" href="images/favicon.svg" sizes="any" type="image/svg+xml">
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -17,11 +18,14 @@
         </button>
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="testAtomNavbar" aria-labelledby="testAtomNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="testAtomNavbarLabel">Dark offcanvas</h5>
+            <h5 class="offcanvas-title" id="testAtomNavbarLabel">TEST ATOM</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <input class="form-control me-2" id="menuSearch" type="search" placeholder="Search" aria-label="Search">
+              </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/test-atom/index.html">TEST ATOM</a>
               </li>
@@ -55,5 +59,6 @@
 
     <script src="bootstrap/popper.min.js"></script>
     <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
