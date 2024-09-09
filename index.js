@@ -6,7 +6,6 @@ menuSearchInput.addEventListener(`input`, () =>
     menuElems.forEach(elem =>
     {
         elem.parentNode.classList.remove(`d-none`)
-        elem.parentNode.classList.remove(`d-dropdown-found`)
         if(elem.innerText)
         {
             const found = elem.innerText.toLowerCase().includes(menuSearchInput.value.toLowerCase())
@@ -21,6 +20,13 @@ menuSearchInput.addEventListener(`input`, () =>
                 {
                     elemChild.classList.remove(`d-none`)
                     elemChild.classList.add(`d-dropdown-found`)
+                })   
+            }
+            if((!menuSearchInput.value || !found) && elem.parentNode.classList.contains(`nav-item`) && elem.parentNode.classList.contains(`dropdown`))
+            {
+                elem.parentNode.querySelectorAll(`ul > li`).forEach(elemChild =>
+                {
+                    elemChild.classList.remove(`d-dropdown-found`)
                 })   
             }
             if(menuSearchInput.value && found && closestDropDown)
